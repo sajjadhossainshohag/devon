@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Native\Laravel\Facades\Window;
+use Native\Laravel\Facades\MenuBar;
 use Native\Laravel\Contracts\ProvidesPhpIni;
 
 class NativeAppServiceProvider implements ProvidesPhpIni
@@ -13,7 +14,18 @@ class NativeAppServiceProvider implements ProvidesPhpIni
      */
     public function boot(): void
     {
-        Window::open();
+        MenuBar::default()
+            ->label('Valet GUI')
+            ->showDockIcon(false);
+
+        Window::open()
+            ->id('main')
+            ->url('/')
+            ->title('Laravel Valet Manager')
+            ->width(1000)
+            ->height(700)
+            ->minWidth(800)
+            ->minHeight(600);
     }
 
     /**
