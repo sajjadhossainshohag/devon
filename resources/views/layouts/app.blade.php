@@ -7,12 +7,15 @@
     <title>Laravel Valet Manager</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @livewireStyles
 </head>
 
 <body class="bg-gray-100">
     <div class="container mx-auto py-8">
         @yield('content')
     </div>
+
+    @livewireScripts
 </body>
 
 </html>

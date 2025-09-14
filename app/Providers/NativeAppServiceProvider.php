@@ -14,10 +14,6 @@ class NativeAppServiceProvider implements ProvidesPhpIni
      */
     public function boot(): void
     {
-        MenuBar::default()
-            ->label('Valet GUI')
-            ->showDockIcon(false);
-
         Window::open()
             ->id('main')
             ->url('/')
